@@ -35,6 +35,7 @@ export default {
           relatedResource: this.viaResource,
         });
         Nova.success(this.__('novaSortable.reorderSuccessful'));
+        Nova.$emit('refresh-resources');
       } catch (e) {
         if (e && e.response && e.response.data && e.response.data.canNotReorder) {
           const id = e.response.data.canNotReorder;
