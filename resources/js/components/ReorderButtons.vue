@@ -2,26 +2,6 @@
   <div class="o1-flex o1-items-center">
     <slot></slot>
     <div class="o1-flex o1-items-center o1-ml-4" v-tooltip="reorderDisabledTooltip" v-if="canSeeReorderButtons">
-      <div class="o1-flex o1-flex-col">
-        <ChevronUpIcon
-          @click.stop="!reorderDisabled && $emit('moveToStart')"
-          :custom-class="{
-            'o1-cursor-pointer text-gray-400 hover:text-primary-400 active:text-primary-500': !reorderDisabled,
-            'o1-cursor-default text-gray-200 dark:text-gray-600': reorderDisabled,
-          }"
-          v-tooltip="moveToStartTooltip"
-        />
-
-        <ChevronDownIcon
-          @click.stop="!reorderDisabled && $emit('moveToEnd')"
-          :custom-class="{
-            'o1-cursor-pointer text-gray-400 hover:text-primary-400  active:text-primary-500': !reorderDisabled,
-            'o1-cursor-default text-gray-200 dark:text-gray-600': reorderDisabled,
-          }"
-          v-tooltip="moveToEndTooltip"
-        />
-      </div>
-
       <BurgerIcon
         style="min-width: 22px; width: 22px"
         :custom-class="{
