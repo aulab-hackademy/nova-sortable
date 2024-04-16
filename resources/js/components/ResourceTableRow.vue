@@ -206,16 +206,16 @@
         </RestoreResourceModal>
       </div>
     </td>
+    <PreviewResourceModal
+      v-if="previewModalOpen"
+      :resource-id="resource.id.value"
+      :resource-name="resourceName"
+      :show="previewModalOpen"
+      @close="closePreviewModal"
+      @confirm="closePreviewModal"
+    />
   </tr>
 
-  <PreviewResourceModal
-    v-if="previewModalOpen"
-    :resource-id="resource.id.value"
-    :resource-name="resourceName"
-    :show="previewModalOpen"
-    @close="closePreviewModal"
-    @confirm="closePreviewModal"
-  />
 </template>
 
 <script>
